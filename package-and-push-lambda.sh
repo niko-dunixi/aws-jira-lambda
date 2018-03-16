@@ -7,5 +7,5 @@ fi
 ./mvnw clean package
 AWS_PROFILE=paulbaker
 export AWS_PROFILE
-aws lambda update-function-code --function-name jira-jql-lambda --zip-file "fileb://$(ls ./target/jira-jql-lambda-*.jar)"
+aws lambda update-function-code --function-name jira-jql-lambda --zip-file "fileb://$(ls ./target/aws-jira-lambda-*.jar)"
 ./invoke-lambda.sh
