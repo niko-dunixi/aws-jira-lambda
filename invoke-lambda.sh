@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 AWS_PROFILE=paulbaker
 export AWS_PROFILE
 if [ ! -f ./payload.json ]; then
