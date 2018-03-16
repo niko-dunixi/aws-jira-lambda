@@ -75,9 +75,11 @@ public class JiraJqlLambda implements RequestStreamHandler {
     }
 
     private static URI toURI(SearchRequest searchRequest) {
+        String uriString = searchRequest.getProtocol() + "://" + searchRequest.getHost();
         try {
-            return new URL(searchRequest.getProtocol() + "://" + searchRequest.getHost()).toURI();
+            return new URL(uriString).toURI();
         } catch (URISyntaxException | MalformedURLException e) {
+            System.err.println("URI String: " + uriString);
             throw new IllegalArgumentException(e);
         }
     }
